@@ -1,0 +1,135 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SaltyLogic™ — Ghinea.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-[#060606] text-white font-sans antialiased">
+    <main class="min-h-screen max-w-[1100px] mx-auto px-5 py-14">
+      <!-- Top bar -->
+      <header class="flex items-center justify-between mb-10">
+        <a
+          href="/"
+          class="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white"
+        >
+          ← Back
+        </a>
+        <span class="text-[11px] tracking-[0.18em] text-white/40 uppercase">
+          Systems Lab
+        </span>
+      </header>
+
+      <!-- Hero -->
+      <section class="mb-12">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#4b9fff]"></span>
+          <span class="text-[11px] tracking-[0.18em] uppercase text-white/70">
+            SaltyLogic™
+          </span>
+        </div>
+
+        <h1 class="text-[clamp(34px,5vw,56px)] font-semibold leading-[1.05] mb-4">
+          A quiet layer of automation behind the creative work.
+        </h1>
+
+        <p class="text-white/65 text-[16px] max-w-[640px] leading-relaxed">
+          SaltyLogic is where I build the infrastructure — bots, internal tools and
+          automations that keep things moving when real life is messy and busy.
+        </p>
+      </section>
+
+      <!-- 3-column grid -->
+      <section class="mb-16">
+        <div class="grid gap-6 md:grid-cols-3 text-[14px]">
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-2">
+              01 · Automation
+            </div>
+            <p class="text-white/78 leading-relaxed">
+              Notification flows, reminders and status updates that keep clients and
+              operators on the same page without another dashboard.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-2">
+              02 · Internal tools
+            </div>
+            <p class="text-white/78 leading-relaxed">
+              Lightweight dashboards, logs and utilities that help me see what the system
+              is doing without overbuilding a full SaaS.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-2">
+              03 · Experiments
+            </div>
+            <p class="text-white/78 leading-relaxed">
+              Small prototypes — bot pilots, scripts, one-off helpers — that either earn
+              their keep or get archived.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Principles + stack -->
+      <section class="grid gap-10 md:grid-cols-[1.3fr,1fr] mb-18">
+        <div>
+          <h2 class="text-sm uppercase tracking-[0.2em] text-white/45 mb-3">
+            Principles
+          </h2>
+          <ul class="space-y-3 text-[14px] text-white/75 leading-relaxed">
+            <li>— Fewer dashboards, more invisible systems.</li>
+            <li>— Everything has a clear owner and outcome, even tiny scripts.</li>
+            <li>— Prefer boring, proven tech over hype — especially for things that run 24/7.</li>
+            <li>— If it breaks, it should be obvious where to look and how to fix it.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/45 mb-1">
+              Typical stack
+            </div>
+            <p class="text-[13px] text-white/80 leading-relaxed">
+              Astro, Node/Express, REST/webhooks, Twilio, OpenAI, Render/Fly.io, Google Sheets
+              as a surprisingly good database when it makes sense.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/45 mb-1">
+              Output style
+            </div>
+            <p class="text-[13px] text-white/80 leading-relaxed">
+              Tools that are simple enough to hand off, but opinionated enough that they don’t
+              fall apart when real humans use them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing -->
+      <section class="mt-10 border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.18em] text-white/45 mb-2">
+            Current status
+          </div>
+          <p class="text-white/70 text-[14px] max-w-[420px]">
+            SaltyLogic stays mostly behind the curtain. When a system works here, it eventually
+            shows up inside SaltySesh or whatever product comes next.
+          </p>
+        </div>
+
+        <a
+          href="mailto:hello@ghinea.io?subject=SaltyLogic%20Collab"
+          class="px-4 py-2 rounded-full border border-white/15 bg-white/10 text-[12px] uppercase tracking-[0.16em] text-white/85 hover:bg-white/15"
+        >
+          Talk systems
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

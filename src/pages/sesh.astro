@@ -1,0 +1,158 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SaltySesh™ — Ghinea.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-[#090909] text-white font-sans antialiased">
+    <main class="min-h-screen max-w-[1100px] mx-auto px-5 py-14">
+      <!-- Top bar -->
+      <header class="flex items-center justify-between mb-10">
+        <a
+          href="/"
+          class="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white"
+        >
+          ← Back
+        </a>
+        <span class="text-[11px] tracking-[0.18em] text-white/40 uppercase">
+          Brand · System · Studio
+        </span>
+      </header>
+
+      <!-- Hero -->
+      <section class="mb-12">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#3e2f25]"></span>
+          <span class="text-[11px] tracking-[0.18em] uppercase text-white/70">
+            SaltySesh™
+          </span>
+        </div>
+
+        <h1 class="text-[clamp(34px,5vw,56px)] font-semibold leading-[1.05] mb-4">
+          A lifestyle studio built like a product.
+        </h1>
+
+        <p class="text-white/65 text-[16px] max-w-[640px] leading-relaxed">
+          SaltySesh is my flagship creative brand — a lifestyle, family and branding studio
+          designed to feel calm and minimal on the surface, with unapologetically nerdy systems
+          running underneath.
+        </p>
+      </section>
+
+      <!-- Two-column highlight -->
+      <section class="grid gap-8 md:grid-cols-[1.4fr,1fr] mb-16">
+        <div>
+          <h2 class="text-sm uppercase tracking-[0.18em] text-white/45 mb-2">
+            What it does
+          </h2>
+          <p class="text-white/75 text-[15px] leading-relaxed mb-4">
+            On the outside, it’s simple: warm sessions for families, couples and brands that
+            don’t want staged, stiff photos. On the inside, it’s a carefully wired client flow —
+            inquiries, prep, confirmations and delivery all move through one clean system.
+          </p>
+
+          <ul class="space-y-2 text-[14px] text-white/65">
+            <li>— Lifestyle & family sessions that feel like hanging out, not performing.</li>
+            <li>— Branding and creator shoots with just enough structure to move fast.</li>
+            <li>— A client experience that feels personal, even when it’s automated.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-1">
+              Role
+            </div>
+            <div class="text-sm text-white/80">
+              Brand, design, website, automation, client experience, support.
+            </div>
+          </div>
+
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-1">
+              Stack
+            </div>
+            <div class="text-sm text-white/80">
+              Astro, Tailwind, Node/Express, SeshBot™ (Twilio + OpenAI), Google Sheets, Render.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow / system -->
+      <section class="mb-18">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-white/45 mb-4">
+          Under the hood
+        </h2>
+
+        <div class="grid gap-4 md:grid-cols-4 text-[13px]">
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-white/40 text-[11px] uppercase tracking-[0.18em] mb-2">
+              01 · Discover
+            </div>
+            <p class="text-white/80 leading-relaxed">
+              Simple landing pages and clear packages instead of endless price PDFs.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-white/40 text-[11px] uppercase tracking-[0.18em] mb-2">
+              02 · Book
+            </div>
+            <p class="text-white/80 leading-relaxed">
+              Inquiry flows into a clean intake, then into calendar and automations — no copy-paste.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-white/40 text-[11px] uppercase tracking-[0.18em] mb-2">
+              03 · Shoot
+            </div>
+            <p class="text-white/80 leading-relaxed">
+              Clients show up prepped: what to wear, what to expect, how it works — handled by the system.
+            </p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+            <div class="text-white/40 text-[11px] uppercase tracking-[0.18em] mb-2">
+              04 · Deliver
+            </div>
+            <p class="text-white/80 leading-relaxed">
+              Galleries go out on time with clear next steps, so follow-ups feel intentional, not chaotic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing / CTA -->
+      <section class="mt-14 border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.18em] text-white/45 mb-2">
+            Where it lives
+          </div>
+          <p class="text-white/70 text-[14px]">
+            SaltySesh runs as its own studio — this page is just the blueprint.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="https://saltysesh.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 rounded-full border border-white/15 bg-white text-black text-[12px] uppercase tracking-[0.16em]"
+          >
+            Visit SaltySesh.co ↗
+          </a>
+          <a
+            href="mailto:hello@saltysesh.co"
+            class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-[12px] uppercase tracking-[0.16em] text-white/80 hover:bg-white/10"
+          >
+            Email the studio
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

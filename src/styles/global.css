@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+/* Soft dark theme tuned to your Framer vibe */
+:root {
+  --bg-main: #101010;        /* page background */
+  --bg-elevated: #151515;    /* cards / sections */
+  --border-soft: #2a2a2a;    /* dividers */
+  --text-main: #ffffff;      /* main text */
+  --text-muted: #a3a3a3;     /* secondary text */
+}
+
+html,
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden; /* also fixes that sideways scroll */
+}

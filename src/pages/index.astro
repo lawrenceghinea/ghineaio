@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 ---
+<html class="overflow-x-hidden">
+
 <head>
   <title>Ghinea.io — Systems disguised as art.</title>
   <meta
@@ -42,7 +44,7 @@ import "../styles/global.css";
 </head>
 
 <body class="bg-[#090909] text-white font-sans antialiased">
-<div class="min-h-screen flex flex-col">
+<div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
 
   <!-- ========================= STICKY NAV ========================= -->
   <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
@@ -174,9 +176,10 @@ import "../styles/global.css";
   </div>
 
   <div class="space-y-6">
-    <!-- ============= SALTYSESH ============= -->
+  <!-- ============= SALTYSESH ============= -->
+  <a href="/sesh" class="group block">
     <article
-      class="group relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden"
+      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
     >
       <!-- Left content -->
       <div class="flex-1 min-w-0 space-y-4">
@@ -206,11 +209,11 @@ import "../styles/global.css";
           Lifestyle photography brand and studio ecosystem—where SeshBot™, presets, and tools are tested in the wild with real clients.
         </p>
 
-        <button
+        <span
           class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
         >
           View Project →
-        </button>
+        </span>
       </div>
 
       <!-- Right image -->
@@ -226,10 +229,12 @@ import "../styles/global.css";
         </div>
       </div>
     </article>
+  </a>
 
-    <!-- ============= SALTYLOGIC ============= -->
+  <!-- ============= SALTYLOGIC ============= -->
+  <a href="/logic" class="group block">
     <article
-      class="group relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#171717] md:bg-gradient-to-r md:from-[#222222] md:to-[#151515] px-5 md:px-7 py-6 md:py-7 overflow-hidden"
+      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#171717] md:bg-gradient-to-r md:from-[#222222] md:to-[#151515] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
     >
       <div class="flex-1 min-w-0 space-y-4">
         <div class="flex flex-wrap items-center gap-3">
@@ -258,11 +263,11 @@ import "../styles/global.css";
           A systems-first parent brand focused on automation, infrastructure, and product experiments living behind the scenes.
         </p>
 
-        <button
+        <span
           class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
         >
           View Project →
-        </button>
+        </span>
       </div>
 
       <div class="md:w-[260px]">
@@ -277,10 +282,12 @@ import "../styles/global.css";
         </div>
       </div>
     </article>
+  </a>
 
-    <!-- ============= LAWRENCE GHINEA ============= -->
+  <!-- ============= LAWRENCE GHINEA ============= -->
+  <a href="/lawrence" class="group block">
     <article
-      class="group relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden"
+      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
     >
       <div class="flex-1 min-w-0 space-y-4">
         <div class="flex flex-wrap items-center gap-3">
@@ -309,11 +316,11 @@ import "../styles/global.css";
           The umbrella for personal experiments, writing, and long-term projects that don’t neatly fit under a single brand.
         </p>
 
-        <button
+        <span
           class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
         >
           View Project →
-        </button>
+        </span>
       </div>
 
       <div class="md:w-[260px]">
@@ -328,8 +335,8 @@ import "../styles/global.css";
         </div>
       </div>
     </article>
-  </div>
-</section>
+  </a>
+</div>
 
 
     <!-- ========================= CONNECT ========================= -->

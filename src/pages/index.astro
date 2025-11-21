@@ -1,707 +1,645 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Ghinea.io — Systems disguised as art.";
+const description =
+  "Lawrence Ghinea designs systems, tools, and automation that look good and work even better. Ghinea.io is his personal lab for creative, code-driven workflows.";
+const bodyClass =
+  "bg-[#090909] text-white font-sans antialiased overflow-x-hidden";
 ---
-<html class="overflow-x-hidden">
 
-<head>
-  <title>Ghinea.io — Systems disguised as art.</title>
-  <meta
-    name="description"
-    content="Lawrence Ghinea designs systems, tools, and automation that look good and work even better. Ghinea.io is his personal lab for creative, code-driven workflows."
-  />
+<Layout {title} {description} {bodyClass}>
+  <div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
+    <!-- ========================= STICKY NAV ========================= -->
+    <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
+      <div class="max-w-[1200px] mx-auto px-5 py-4 flex flex-col">
+        <div class="flex items-center justify-between gap-4 mb-3">
+          <!-- left pill -->
+          <a
+            href="#top"
+            class="nav-pill flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 uppercase tracking-[0.16em] text-xs"
+          >
+            <span class="w-1.5 h-1.5 bg-[#2de1a2] rounded-full shadow-[0_0_8px_#2de1a2]"></span>
+            Ghinea.io
+          </a>
 
-  <!-- Open Graph / iMessage / Slack preview -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ghinea.io" />
-  <meta property="og:title" content="Ghinea.io — Systems disguised as art." />
-  <meta
-    property="og:description"
-    content="Designing clean, opinionated systems for creatives — where automation, design, and code intersect."
-  />
-  <meta property="og:url" content="https://ghinea.io" />
-  <meta property="og:image" content="https://ghinea.io/images/og-ghineaio.png" />
+          <!-- center clock (hidden on xs) -->
+          <div
+            id="clock"
+            class="hidden sm:flex flex-1 justify-center text-[11px] tracking-[0.18em] text-white/60 uppercase"
+          >
+            MST · --
+          </div>
 
-  <!-- Twitter / X card (also used by some apps) -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ghinea.io — Systems disguised as art." />
-  <meta
-    name="twitter:description"
-    content="Designing clean, opinionated systems for creatives — where automation, design, and code intersect."
-  />
-  <meta name="twitter:image" content="https://ghinea.io/images/og-ghineaio.png" />
+          <!-- right pill -->
+          <a
+            href="#connect"
+            class="nav-pill bg-white text-black px-4 py-1.5 rounded-full border border-white/10 uppercase tracking-[0.16em] text-[11px] hover:bg-[#e5e5e5] transition"
+          >
+            Contact ↗
+          </a>
+        </div>
 
-  <!-- iOS niceties -->
-  <meta name="apple-mobile-web-app-title" content="Ghinea.io" />
-</head>
+        <!-- progress line -->
+        <div id="nav-line" class="h-[1px] w-full bg-white/10"></div>
+      </div>
+    </header>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ghinea.io — Systems disguised as art.</title>
-  <meta name="description" content="Ghinea.io — the personal lab of Lawrence Ghinea. Automation, design, systems, and digital tools disguised as art." />
-</head>
+    <!-- ========================= HERO ========================= -->
+    <main id="top" class="flex-1 relative">
+      <!-- cursor glow -->
+      <div
+        id="cursor-glow"
+        class="pointer-events-none fixed z-[-1] w-[180px] h-[180px] rounded-full opacity-0"
+        style="background: radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 65%); mix-blend-mode: screen; transform: translate(-50%, -50%);"
+      ></div>
 
-<body class="bg-[#090909] text-white font-sans antialiased">
-<div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
+      <section class="max-w-[1200px] mx-auto px-5 pt-16 pb-24 relative">
+        <!-- TOP LINE -->
+        <div class="flex items-center gap-6 mb-10 opacity-0 animate-[heroTopIn_0.8s_ease-out_forwards]">
+          <div class="w-24 h-24 rounded-full overflow-hidden border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <img
+              src="/images/seshcali.jpg"
+              class="w-full h-full object-cover grayscale avatar-img"
+              alt="Portrait of Lawrence Ghinea"
+            />
+          </div>
 
-  <!-- ========================= STICKY NAV ========================= -->
-  <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
-    <div class="max-w-[1200px] mx-auto px-5 py-4 flex flex-col">
-      <div class="flex items-center justify-between gap-4 mb-3">
-        <!-- left pill -->
-        <a
-          href="#top"
-          class="nav-pill flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 uppercase tracking-[0.16em] text-xs"
+          <p class="max-w-[360px] text-sm text-[#9a9a9a] leading-relaxed">
+            Designing digital tools that look good and work even better.
+          </p>
+        </div>
+
+        <!-- TITLE -->
+        <h1
+          class="opacity-0 animate-[heroTitleIn_0.9s_ease-out_forwards_0.2s] text-[clamp(42px,8vw,90px)] font-bold leading-[0.9] mb-16 tracking-tight"
         >
-          <span class="w-1.5 h-1.5 bg-[#2de1a2] rounded-full shadow-[0_0_8px_#2de1a2]"></span>
-          Ghinea.io
-        </a>
+          Systems<br />disguised as art.
+        </h1>
 
-        <!-- center clock (hidden on xs) -->
+        <!-- DETAILS -->
         <div
-          id="clock"
-          class="hidden sm:flex flex-1 justify-center text-[11px] tracking-[0.18em] text-white/60 uppercase"
+          class="opacity-0 animate-[heroBottomIn_0.8s_ease-out_forwards_0.5s] flex flex-col sm:flex-row gap-4 border-t border-white/10 pt-4 text-sm text-[#a0a0a0]"
         >
-          MST · --
+          <span>Phoenix, AZ</span>
+          <span class="sm:text-center w-full">MST (GMT -7)</span>
+          <span class="flex items-center gap-2 sm:justify-end">
+            <span class="w-2 h-2 bg-[#2de1a2] rounded-full shadow-[0_0_10px_#2de1a2]"></span>
+            AVAILABLE
+          </span>
+        </div>
+      </section>
+
+      <!-- ========================= ABOUT ========================= -->
+      <section class="max-w-[1200px] mx-auto px-5 mt-10" data-observe>
+        <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-4">
+          About
         </div>
 
-        <!-- right pill -->
-        <a
-          href="#connect"
-          class="nav-pill bg-white text-black px-4 py-1.5 rounded-full border border-white/10 uppercase tracking-[0.16em] text-[11px] hover:bg-[#e5e5e5] transition"
-        >
-          Contact ↗
-        </a>
-      </div>
+        <div class="flex flex-col md:flex-row md:items-start gap-10">
+          <!-- Text column -->
+          <div class="flex-1 max-w-[580px]">
+            <p class="text-[18px] leading-relaxed text-[#e8e8e8] mb-6">
+              Lawrence Ghinea is a designer and builder exploring how automation,
+              code and design intersect to empower the creative industry. Ghinea.io
+              is his personal lab for crafting clean systems, tools, and workflows
+              designed to simplify work and amplify ideas.
+            </p>
 
-      <!-- progress line -->
-      <div id="nav-line" class="h-[1px] w-full bg-white/10"></div>
-    </div>
-  </header>
+            <a
+              href="https://calendly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[12px] uppercase tracking-[0.16em] underline underline-offset-4 decoration-white/40 flex items-center gap-1"
+            >
+              Book a call ↗
+            </a>
+          </div>
 
+          <!-- Photo column (smaller, anchored to top) -->
+          <div class="w-full md:w-auto">
+            <div
+              class="w-[210px] md:w-[240px] rounded-xl overflow-hidden border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.65)]"
+            >
+              <img
+                src="/images/SESH2274.JPG"
+                class="w-full h-full object-cover grayscale"
+                alt="Portrait of Lawrence Ghinea"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- ========================= HERO ========================= -->
-  <main id="top" class="flex-1 relative">
-
-    <!-- cursor glow -->
-    <div
-  id="cursor-glow"
-  class="pointer-events-none fixed z-[-1] w-[180px] h-[180px] rounded-full opacity-0"
-  style="background: radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 65%); mix-blend-mode: screen; transform: translate(-50%, -50%);"
-></div>
-
-
-    <section class="max-w-[1200px] mx-auto px-5 pt-16 pb-24 relative">
-      <!-- TOP LINE -->
-      <div class="flex items-center gap-6 mb-10 opacity-0 animate-[heroTopIn_0.8s_ease-out_forwards]">
-        <div class="w-24 h-24 rounded-full overflow-hidden border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
-          <img src="/images/seshcali.jpg" class="w-full h-full object-cover grayscale avatar-img" alt="Portrait of Lawrence Ghinea" />
+      <!-- ========================= PROJECTS ========================= -->
+      <section class="max-w-[1200px] mx-auto px-5 mt-20 space-y-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between">
+          <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a]">
+            Work
+          </div>
+          <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a]">
+            Est. 2024
+          </div>
         </div>
 
-        <p class="max-w-[360px] text-sm text-[#9a9a9a] leading-relaxed">
-          Designing digital tools that look good and work even better.
-        </p>
-      </div>
+        <div class="space-y-6">
+          <!-- ============= SALTYSESH ============= -->
+          <a href="/sesh" class="group block">
+            <article
+              class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
+            >
+              <!-- Left content -->
+              <div class="flex-1 min-w-0 space-y-4">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
+                    SaltySesh™
+                  </h2>
+                  <div class="flex flex-wrap gap-2 text-[11px]">
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      DSGN
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      DEV
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      BRA
+                    </span>
+                  </div>
+                  <div class="ml-auto hidden md:block text-[24px] text-white/40">
+                    ’24
+                  </div>
+                </div>
 
-      <!-- TITLE -->
-      <h1 class="opacity-0 animate-[heroTitleIn_0.9s_ease-out_forwards_0.2s] text-[clamp(42px,8vw,90px)] font-bold leading-[0.9] mb-16 tracking-tight">
-        Systems<br />disguised as art.
-      </h1>
+                <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
 
-      <!-- DETAILS -->
-      <div class="opacity-0 animate-[heroBottomIn_0.8s_ease-out_forwards_0.5s] flex flex-col sm:flex-row gap-4 border-t border-white/10 pt-4 text-sm text-[#a0a0a0]">
-        <span>Phoenix, AZ</span>
-        <span class="sm:text-center w-full">MST (GMT -7)</span>
-        <span class="flex items-center gap-2 sm:justify-end">
-          <span class="w-2 h-2 bg-[#2de1a2] rounded-full shadow-[0_0_10px_#2de1a2]"></span>
-          AVAILABLE
-        </span>
-      </div>
-    </section>
+                <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
+                  Lifestyle photography brand and studio ecosystem—where SeshBot™, presets, and tools are tested in the wild with real clients.
+                </p>
 
+                <span
+                  class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
+                >
+                  View Project →
+                </span>
+              </div>
 
-    <!-- ========================= ABOUT ========================= -->
-    <section class="max-w-[1200px] mx-auto px-5 mt-10" data-observe>
-  <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-4">
-    About
-  </div>
+              <!-- Right image -->
+              <div class="md:w-[260px]">
+                <div
+                  class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
+                >
+                  <img
+                    src="/images/ssblack.PNG"
+                    alt="SaltySesh branding"
+                    class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                  />
+                </div>
+              </div>
+            </article>
+          </a>
 
-  <div class="flex flex-col md:flex-row md:items-start gap-10">
-    <!-- Text column -->
-    <div class="flex-1 max-w-[580px]">
-      <p class="text-[18px] leading-relaxed text-[#e8e8e8] mb-6">
-        Lawrence Ghinea is a designer and builder exploring how automation,
-        code and design intersect to empower the creative industry. Ghinea.io
-        is his personal lab for crafting clean systems, tools, and workflows
-        designed to simplify work and amplify ideas.
-      </p>
+          <!-- ============= SALTYLOGIC ============= -->
+          <a href="/logic" class="group block">
+            <article
+              class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#171717] md:bg-gradient-to-r md:from-[#222222] md:to-[#151515] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
+            >
+              <div class="flex-1 min-w-0 space-y-4">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
+                    SaltyLogic™
+                  </h2>
+                  <div class="flex flex-wrap gap-2 text-[11px]">
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      DSGN
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      UX
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      SYS
+                    </span>
+                  </div>
+                  <div class="ml-auto hidden md:block text-[24px] text-white/40">
+                    ’24
+                  </div>
+                </div>
 
-      <a
-        href="https://calendly.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-[12px] uppercase tracking-[0.16em] underline underline-offset-4 decoration-white/40 flex items-center gap-1"
+                <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
+
+                <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
+                  A systems-first parent brand focused on automation, infrastructure, and product experiments living behind the scenes.
+                </p>
+
+                <span
+                  class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
+                >
+                  View Project →
+                </span>
+              </div>
+
+              <div class="md:w-[260px]">
+                <div
+                  class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
+                >
+                  <img
+                    src="/images/slblue.png"
+                    alt="SaltyLogic branding"
+                    class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                  />
+                </div>
+              </div>
+            </article>
+          </a>
+
+          <!-- ============= LAWRENCE GHINEA ============= -->
+          <a href="/lawrence" class="group block">
+            <article
+              class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
+            >
+              <div class="flex-1 min-w-0 space-y-4">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
+                    Lawrence Ghinea
+                  </h2>
+                  <div class="flex flex-wrap gap-2 text-[11px]">
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      BRA
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      DEV
+                    </span>
+                    <span
+                      class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]"
+                    >
+                      UX
+                    </span>
+                  </div>
+                  <div class="ml-auto hidden md:block text-[24px] text-white/40">
+                    ’24
+                  </div>
+                </div>
+
+                <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
+
+                <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
+                  The umbrella for personal experiments, writing, and long-term projects that don’t neatly fit under a single brand.
+                </p>
+
+                <span
+                  class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
+                >
+                  View Project →
+                </span>
+              </div>
+
+              <div class="md:w-[260px]">
+                <div
+                  class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
+                >
+                  <img
+                    src="/images/lg.png"
+                    alt="Lawrence Ghinea monogram"
+                    class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                  />
+                </div>
+              </div>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================= CONNECT ========================= -->
+      <section
+        id="connect"
+        class="max-w-[1200px] mx-auto px-5 mt-28 mb-16 pb-20 border-t border-white/5 pt-16 relative"
+        data-observe
       >
-        Book a call ↗
-      </a>
-    </div>
+        <h2 class="text-[clamp(40px,9vw,80px)] font-bold mb-8">
+          <span class="text-white/60">Let’s</span> Connect
+        </h2>
 
-    <!-- Photo column (smaller, anchored to top) -->
-    <div class="w-full md:w-auto">
-      <div class="w-[210px] md:w-[240px] rounded-xl overflow-hidden border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.65)]">
-        <img
-          src="/images/SESH2274.JPG"
-          class="w-full h-full object-cover grayscale"
-          alt="Portrait of Lawrence Ghinea"
-        />
-      </div>
-    </div>
+        <p class="text-[17px] max-w-[600px] text-white/60 mb-10 leading-relaxed">
+          Always open to new collaborations and ideas. Let’s build something worth showing off.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 max-w-[600px] gap-4">
+          <a
+            href="https://calendly.com/lawrence-ghinea/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="connect-btn-left"
+          >
+            Book a Call
+          </a>
+
+          <a href="mailto:hello@ghinea.io" class="connect-btn-right">
+            Send an Email
+          </a>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="mt-12 text-xs text-white/40">
+          Lawrence Ghinea 2025
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="absolute bottom-4 right-6 flex gap-3">
+          <a
+            href="https://www.tiktok.com/@lawrenceghinea"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social text-[11px] font-semibold tracking-[0.16em]"
+          >
+            TT
+          </a>
+
+          <a
+            href="https://www.instagram.com/lawrenceghinea"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social text-[11px] font-semibold tracking-[0.16em]"
+          >
+            IG
+          </a>
+        </div>
+      </section>
+    </main>
   </div>
-</section>
 
-
-
-    <!-- ========================= PROJECTS ========================= -->
-       <section class="max-w-[1200px] mx-auto px-5 mt-20 space-y-8">
-  <!-- Header -->
-  <div class="flex items-center justify-between">
-    <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a]">
-      Work
-    </div>
-    <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a]">
-      Est. 2024
-    </div>
+  <!-- LOADING OVERLAY -->
+  <div id="loading-screen" class="fixed inset-0 z-50 bg-black flex items-center justify-center">
+    <div
+      class="w-1/2 max-w-[420px] h-[1px] bg-white/60 origin-left animate-[loadLine_1.2s_ease-out_forwards]"
+    ></div>
   </div>
 
-  <div class="space-y-6">
-  <!-- ============= SALTYSESH ============= -->
-  <a href="/sesh" class="group block">
-    <article
-      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
-    >
-      <!-- Left content -->
-      <div class="flex-1 min-w-0 space-y-4">
-        <div class="flex flex-wrap items-center gap-3">
-          <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
-            SaltySesh™
-          </h2>
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              DSGN
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              DEV
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              BRA
-            </span>
-          </div>
-          <div class="ml-auto hidden md:block text-[24px] text-white/40">
-            ’24
-          </div>
-        </div>
-
-        <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
-
-        <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
-          Lifestyle photography brand and studio ecosystem—where SeshBot™, presets, and tools are tested in the wild with real clients.
-        </p>
-
-        <span
-          class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
-        >
-          View Project →
-        </span>
-      </div>
-
-      <!-- Right image -->
-      <div class="md:w-[260px]">
-        <div
-          class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
-        >
-          <img
-            src="/images/ssblack.PNG"
-            alt="SaltySesh branding"
-            class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-          />
-        </div>
-      </div>
-    </article>
-  </a>
-
-  <!-- ============= SALTYLOGIC ============= -->
-  <a href="/logic" class="group block">
-    <article
-      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#171717] md:bg-gradient-to-r md:from-[#222222] md:to-[#151515] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
-    >
-      <div class="flex-1 min-w-0 space-y-4">
-        <div class="flex flex-wrap items-center gap-3">
-          <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
-            SaltyLogic™
-          </h2>
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              DSGN
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              UX
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              SYS
-            </span>
-          </div>
-          <div class="ml-auto hidden md:block text-[24px] text-white/40">
-            ’24
-          </div>
-        </div>
-
-        <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
-
-        <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
-          A systems-first parent brand focused on automation, infrastructure, and product experiments living behind the scenes.
-        </p>
-
-        <span
-          class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
-        >
-          View Project →
-        </span>
-      </div>
-
-      <div class="md:w-[260px]">
-        <div
-          class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
-        >
-          <img
-            src="/images/slblue.png"
-            alt="SaltyLogic branding"
-            class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-          />
-        </div>
-      </div>
-    </article>
-  </a>
-
-  <!-- ============= LAWRENCE GHINEA ============= -->
-  <a href="/lawrence" class="group block">
-    <article
-      class="relative flex flex-col md:flex-row items-stretch gap-6 rounded-3xl border border-white/5 bg-[#111111] md:bg-gradient-to-r md:from-[#151515] md:to-[#111111] px-5 md:px-7 py-6 md:py-7 overflow-hidden cursor-pointer"
-    >
-      <div class="flex-1 min-w-0 space-y-4">
-        <div class="flex flex-wrap items-center gap-3">
-          <h2 class="text-[24px] md:text-[28px] font-semibold text-white tracking-tight">
-            Lawrence Ghinea
-          </h2>
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              BRA
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              DEV
-            </span>
-            <span class="inline-flex items-center rounded-full border border-white/15 px-3 py-1 tracking-[0.16em] text-[10px] text-[#d0d0d0]">
-              UX
-            </span>
-          </div>
-          <div class="ml-auto hidden md:block text-[24px] text-white/40">
-            ’24
-          </div>
-        </div>
-
-        <div class="hidden md:block h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
-
-        <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[480px]">
-          The umbrella for personal experiments, writing, and long-term projects that don’t neatly fit under a single brand.
-        </p>
-
-        <span
-          class="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase group-hover:bg-white group-hover:text-black transition"
-        >
-          View Project →
-        </span>
-      </div>
-
-      <div class="md:w-[260px]">
-        <div
-          class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black/80"
-        >
-          <img
-            src="/images/lg.png"
-            alt="Lawrence Ghinea monogram"
-            class="absolute inset-0 h-full w-full object-contain md:object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-          />
-        </div>
-      </div>
-    </article>
-  </a>
-</div>
-
-
-    <!-- ========================= CONNECT ========================= -->
-    <section id="connect" class="max-w-[1200px] mx-auto px-5 mt-28 mb-16 pb-20 border-t border-white/5 pt-16 relative" data-observe>
-
-      <h2 class="text-[clamp(40px,9vw,80px)] font-bold mb-8">
-        <span class="text-white/60">Let’s</span> Connect
-      </h2>
-
-      <p class="text-[17px] max-w-[600px] text-white/60 mb-10 leading-relaxed">
-        Always open to new collaborations and ideas. Let’s build something worth showing off.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 max-w-[600px] gap-4">
-        <a href="https://calendly.com/lawrence-ghinea/30min" target="_blank" rel="noopener noreferrer" class="connect-btn-left">
-          Book a Call
-        </a> 
-
-        <a href="mailto:hello@ghinea.io" class="connect-btn-right">
-          Send an Email
-        </a>
-      </div>
-
-      <!-- COPYRIGHT -->
-      <div class="mt-12 text-xs text-white/40">
-        Lawrence Ghinea 2025
-      </div>
-
-      <!-- SOCIALS -->
-            <div class="absolute bottom-4 right-6 flex gap-3">
-        <a
-          href="https://www.tiktok.com/@lawrenceghinea"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social text-[11px] font-semibold tracking-[0.16em]"
-        >
-          TT
-        </a>
-
-        <a
-          href="https://www.instagram.com/lawrenceghinea"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social text-[11px] font-semibold tracking-[0.16em]"
-        >
-          IG
-        </a>
-      </div>
-
-
-    </section>
-
-  </main>
-</div>
-
-<!-- LOADING OVERLAY -->
-<div id="loading-screen" class="fixed inset-0 z-50 bg-black flex items-center justify-center">
-  <div class="w-1/2 max-w-[420px] h-[1px] bg-white/60 origin-left animate-[loadLine_1.2s_ease-out_forwards]"></div>
-</div>
-
-<!-- ========================= STYLES ========================= -->
-<style>
-  /* Smooth scroll */
-  html { scroll-behavior: smooth; }
-
-  /* Background grid / noise */
-  body {
-    position: relative;
-    --scrollParallax: 0px;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-    opacity: 0.12;
-    transform: translate3d(0, var(--scrollParallax), 0);
-    pointer-events: none;
-  }
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: radial-gradient(circle at 0 0, rgba(255,255,255,0.1), transparent 55%);
-    opacity: 0.25;
-    pointer-events: none;
-  }
-
-  /* Avatar fine-tune */
-  .avatar-img {
-    transform: scale(1.2);
-    object-position: center 1%;
-  }
-
-  /* ===== HERO ANIMATIONS ===== */
-  @keyframes heroTopIn { from {opacity:0; transform:translateY(-40px);} to {opacity:1; transform:translateY(0);} }
-  @keyframes heroTitleIn { from {opacity:0; transform:translateY(40px);} to {opacity:1; transform:translateY(0);} }
-  @keyframes heroBottomIn { from {opacity:0; transform:translateY(40px);} to {opacity:1; transform:translateY(0);} }
-
-  /* Loading line */
-  @keyframes loadLine { from {transform: scaleX(0);} to {transform: scaleX(1);} }
-  #loading-screen.hide { opacity: 0; pointer-events: none; transition: opacity 0.4s ease 0.15s; }
-
-  /* ===== OBSERVER BASE STATE ===== */
-  [data-observe] {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  [data-observe].in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== PROJECT CARD STRUCTURE ===== */
-  .project-card {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.015);
-    border-radius: 14px;
-    overflow: hidden;
-    transition:
-      transform 0.4s cubic-bezier(.19,1,.22,1),
-      background 0.3s ease,
-      box-shadow 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-  }
-  .project-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.03);
-    box-shadow: 0 24px 60px rgba(0,0,0,0.65);
-  }
-
-  .project-left {
-    flex: 1;
-    padding: 28px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .project-title {
-    font-size: 26px;
-    font-weight: 600;
-  }
-
-  .project-year {
-    color: #a0a0a0;
-    font-size: 15px;
-  }
-
-  .project-tags {
-    margin: 18px 0;
-    display: flex;
-    gap: 10px;
-  }
-
-  .tag {
-    padding: 6px 14px;
-    border-radius: 9999px;
-    border: 1px solid rgba(255,255,255,0.12);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 11px;
-    color: #cfcfcf;
-  }
-
-  .project-line {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-    position: relative;
-  }
-
-  .project-btn {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(6px);
-    opacity: 0;
-    padding: 8px 18px;
-    border-radius: 9999px;
-    background: white;
-    color: #111;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
-  }
-  .project-card:hover .project-btn {
-    opacity: 1;
-    transform: translateY(-50%);
-  }
-
-  .project-image {
-    width: 180px;
-    min-height: 150px;
-    background: #111;
-    border-left: 1px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-  }
-  .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%) brightness(55%);
-    opacity: 0.7;
-    transform: scale(1.06);
-    transition:
-      filter 0.35s ease,
-      opacity 0.35s ease,
-      transform 0.45s ease;
-  }
-  .project-card:hover .project-image img {
-    filter: grayscale(0) brightness(100%);
-    opacity: 1;
-    transform: scale(1.14);
-  }
-
-  /* ===== CONNECT BUTTONS ===== */
-  .connect-btn-left,
-  .connect-btn-right {
-    padding: 16px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-    font-size: 17px;
-    transition: background 0.25s ease, transform 0.2s ease;
-  }
-  .connect-btn-left:hover,
-  .connect-btn-right:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-  }
-
-  /* ===== SOCIAL ICONS ===== */
-  .social {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    transition: background 0.25s ease, transform 0.2s ease;
-  }
-  .social:hover {
-    background: rgba(255,255,255,0.18);
-    transform: translateY(-2px);
-  }
-
-  /* ===== PROGRESS LINE ===== */
-  #nav-line {
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: transform 0.08s linear;
-  }
-</style>
-
-
-<!-- ========================= JS ========================= -->
-<script>
-  /* Scroll progress line + parallax grid */
-  function updateNavLine() {
-    const line = document.getElementById("nav-line");
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    const p = docHeight > 0 ? scrollY / docHeight : 0;
-    if (line) {
-      line.style.transform = `scaleX(${Math.min(1, Math.max(0, p))})`;
+  <!-- ========================= STYLES ========================= -->
+  <style>
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
     }
-    document.body.style.setProperty("--scrollParallax", `${-scrollY * 0.04}px`);
-  }
 
-  /* Scroll observer for fade-up sections */
-  function initObservers() {
-    const elements = document.querySelectorAll("[data-observe]");
-    if (!("IntersectionObserver" in window) || elements.length === 0) {
-      elements.forEach((el) => el.classList.add("in-view"));
-      return;
+    /* Background grid / noise */
+    body {
+      position: relative;
+      --scrollParallax: 0px;
     }
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    elements.forEach((el) => obs.observe(el));
-  }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px
+        );
+      background-size: 80px 80px;
+      opacity: 0.12;
+      transform: translate3d(0, var(--scrollParallax), 0);
+      pointer-events: none;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(
+        circle at 0 0,
+        rgba(255, 255, 255, 0.1),
+        transparent 55%
+      );
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    /* Avatar fine-tune */
+    .avatar-img {
+      transform: scale(1.2);
+      object-position: center 1%;
+    }
+
+    /* ===== HERO ANIMATIONS ===== */
+    @keyframes heroTopIn {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes heroTitleIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes heroBottomIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Loading line */
+    @keyframes loadLine {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+    #loading-screen.hide {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease 0.15s;
+    }
+
+    /* ===== OBSERVER BASE STATE ===== */
+    [data-observe] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-observe].in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== CONNECT BUTTONS ===== */
+    .connect-btn-left,
+    .connect-btn-right {
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 17px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .connect-btn-left:hover,
+    .connect-btn-right:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ===== SOCIAL ICONS ===== */
+    .social {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .social:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+    }
+
+    /* ===== PROGRESS LINE ===== */
+    #nav-line {
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.08s linear;
+    }
+  </style>
+
+  <!-- ========================= JS ========================= -->
+  <script>
+    /* Scroll progress line + parallax grid */
+    function updateNavLine() {
+      const line = document.getElementById("nav-line");
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollY =
+        window.scrollY || document.documentElement.scrollTop || 0;
+      const p = docHeight > 0 ? scrollY / docHeight : 0;
+      if (line) {
+        line.style.transform = `scaleX(${Math.min(1, Math.max(0, p))})`;
+      }
+      document.body.style.setProperty(
+        "--scrollParallax",
+        `${-scrollY * 0.04}px`
+      );
+    }
+
+    /* Scroll observer for fade-up sections */
+    function initObservers() {
+      const elements = document.querySelectorAll("[data-observe]");
+      if (!("IntersectionObserver" in window) || elements.length === 0) {
+        elements.forEach((el) => el.classList.add("in-view"));
+        return;
+      }
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      elements.forEach((el) => obs.observe(el));
+    }
 
     /* Cursor glow follow (centered on cursor) */
-  function initCursorGlow() {
-    const glow = document.getElementById("cursor-glow");
-    if (!glow) return;
+    function initCursorGlow() {
+      const glow = document.getElementById("cursor-glow");
+      if (!glow) return;
 
-    let targetX = window.innerWidth / 2;
-    let targetY = window.innerHeight / 2;
-    let currentX = targetX;
-    let currentY = targetY;
-    const speed = 0.18;
+      let targetX = window.innerWidth / 2;
+      let targetY = window.innerHeight / 2;
+      let currentX = targetX;
+      let currentY = targetY;
+      const speed = 0.18;
 
-    window.addEventListener("mousemove", (e) => {
-      targetX = e.clientX;
-      targetY = e.clientY;
-      glow.style.opacity = "1";
-    });
+      window.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        glow.style.opacity = "1";
+      });
 
-    function animate() {
-      currentX += (targetX - currentX) * speed;
-      currentY += (targetY - currentY) * speed;
-      glow.style.left = currentX + "px";
-      glow.style.top = currentY + "px";
-      requestAnimationFrame(animate);
+      function animate() {
+        currentX += (targetX - currentX) * speed;
+        currentY += (targetY - currentY) * speed;
+        glow.style.left = currentX + "px";
+        glow.style.top = currentY + "px";
+        requestAnimationFrame(animate);
+      }
+      animate();
     }
-    animate();
-  }
 
+    /* Live MST clock (uses local time but labeled MST) */
+    function updateClock() {
+      const el = document.getElementById("clock");
+      if (!el) return;
+      const now = new Date();
+      const opts = { hour: "2-digit", minute: "2-digit" };
+      const timeStr = now.toLocaleTimeString([], opts);
+      el.textContent = `MST · ${timeStr}`;
+    }
 
-  /* Live MST clock (uses local time but labeled MST) */
-  function updateClock() {
-    const el = document.getElementById("clock");
-    if (!el) return;
-    const now = new Date();
-    const opts = { hour: "2-digit", minute: "2-digit" };
-    const timeStr = now.toLocaleTimeString([], opts);
-    el.textContent = `MST · ${timeStr}`;
-  }
+    /* Loading overlay */
+    function initLoader() {
+      const loader = document.getElementById("loading-screen");
+      if (!loader) return;
+      setTimeout(() => {
+        loader.classList.add("hide");
+        setTimeout(() => loader.remove(), 600);
+      }, 600);
+    }
 
-  /* Loading overlay */
-  function initLoader() {
-    const loader = document.getElementById("loading-screen");
-    if (!loader) return;
-    setTimeout(() => {
-      loader.classList.add("hide");
-      setTimeout(() => loader.remove(), 600);
-    }, 600);
-  }
+    window.addEventListener("load", () => {
+      updateNavLine();
+      initObservers();
+      initCursorGlow();
+      initClockLoop();
+      initLoader();
+    });
+    window.addEventListener("scroll", updateNavLine);
 
-  window.addEventListener("load", () => {
-    updateNavLine();
-    initObservers();
-    initCursorGlow();
-    initClockLoop();
-    initLoader();
-  });
-  window.addEventListener("scroll", updateNavLine);
-
-  function initClockLoop() {
-    updateClock();
-    setInterval(updateClock, 30000);
-  }
-</script>
-
-</body>
-</html>
+    function initClockLoop() {
+      updateClock();
+      setInterval(updateClock, 30000);
+    }
+  </script>
+</Layout>

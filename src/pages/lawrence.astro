@@ -1,117 +1,126 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Lawrence Ghinea — Ghinea.io";
+const description =
+  "Personal context on Lawrence Ghinea — designer, builder, systems guy, and dad building calm, opinionated systems.";
+const bodyClass = "bg-[#090909] text-white font-sans antialiased";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lawrence Ghinea — Ghinea.io</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body class="bg-[#090909] text-white font-sans antialiased">
-    <main class="min-h-screen max-w-[1100px] mx-auto px-5 py-14">
-      <!-- Top bar -->
-      <header class="flex items-center justify-between mb-10">
-        <a
-          href="/"
-          class="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white"
-        >
-          ← Back
-        </a>
-        <span class="text-[11px] tracking-[0.18em] text-white/40 uppercase">
-          Personal · Context
-        </span>
-      </header>
+<Layout {title} {description} {bodyClass}>
+  <main class="min-h-screen max-w-[1100px] mx-auto px-5 py-14">
+    <!-- Top bar -->
+    <header class="flex items-center justify-between mb-10">
+      <a
+        href="/"
+        class="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white"
+      >
+        ← Back
+      </a>
+      <span class="text-[11px] tracking-[0.18em] text-white/40 uppercase">
+        Personal · Context
+      </span>
+    </header>
 
-      <!-- Hero -->
-      <section class="mb-12">
-        <h1 class="text-[clamp(34px,5vw,56px)] font-semibold leading-[1.05] mb-3">
-          Designer, builder, systems guy, dad.
-        </h1>
-        <p class="text-white/65 text-[16px] max-w-[640px] leading-relaxed">
-          I like building calm, opinionated systems that make life feel a little less chaotic —
-          for myself, my family, and the people who end up using the tools I ship.
-        </p>
-      </section>
+    <!-- Hero -->
+    <section class="mb-12">
+      <h1 class="text-[clamp(34px,5vw,56px)] font-semibold leading-[1.05] mb-3">
+        Designer, builder, systems guy, dad.
+      </h1>
+      <p class="text-white/65 text-[16px] max-w-[640px] leading-relaxed">
+        I like building calm, opinionated systems that make life feel a little less chaotic —
+        for myself, my family, and the people who end up using the tools I ship.
+      </p>
+    </section>
 
-      <!-- Split: story + quick facts -->
-      <section class="grid gap-10 md:grid-cols-[1.5fr,1fr] mb-16">
-        <div>
-          <h2 class="text-sm uppercase tracking-[0.2em] text-white/45 mb-3">
-            The short version
-          </h2>
-          <p class="text-white/78 text-[15px] leading-relaxed mb-3">
-            I grew up obsessed with the internet, games and cameras. Eventually that turned into
-            IT work — lots of tickets, lots of troubleshooting, lots of “this is broken, please fix it.”
-          </p>
-          <p class="text-white/78 text-[15px] leading-relaxed mb-3">
-            Somewhere between photography, tech support and automation, I realized I’m happiest
-            when I’m building systems that quietly run in the background while real life happens
-            in the foreground.
-          </p>
-          <p class="text-white/78 text-[15px] leading-relaxed">
-            Now I’m trying to turn that into a career I actually want to keep, instead of just
-            another job I’m trying to escape from.
-          </p>
-        </div>
-
-        <div class="space-y-4 text-[14px]">
-          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
-            <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-1">
-              Currently
-            </div>
-            <p class="text-white/80">
-              Building SaltySesh, hardening SeshBot™, and slowly replacing “corporate IT brain”
-              with “builder / owner brain.”
-            </p>
-          </div>
-          <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
-            <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-1">
-              Anchors
-            </div>
-            <p class="text-white/80">
-              Family, faith, long-term thinking, and not selling out my future just to look busy right now.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Timeline -->
-      <section class="mb-16">
+    <!-- Split: story + quick facts -->
+    <section class="grid gap-10 md:grid-cols-[1.5fr,1fr] mb-16">
+      <div>
         <h2 class="text-sm uppercase tracking-[0.2em] text-white/45 mb-3">
-          A quick timeline
+          The short version
         </h2>
-        <ul class="space-y-3 text-[14px] text-white/75">
-          <li><span class="text-white/40">Early 2020s ·</span> Corporate IT, tickets, systems, lots of “have you tried turning it off and on again.”</li>
-          <li><span class="text-white/40">2024 ·</span> SaltySesh™ becomes real instead of theoretical. SeshBot™ starts as a side project and accidentally turns into a product.</li>
-          <li><span class="text-white/40">Now ·</span> Building a small empire on purpose: photography, tools, and a future where I answer to my own calendar.</li>
-        </ul>
-      </section>
+        <p class="text-white/78 text-[15px] leading-relaxed mb-3">
+          I grew up obsessed with the internet, games and cameras. Eventually that turned into
+          IT work — lots of tickets, lots of troubleshooting, lots of “this is broken, please fix it.”
+        </p>
+        <p class="text-white/78 text-[15px] leading-relaxed mb-3">
+          Somewhere between photography, tech support and automation, I realized I’m happiest
+          when I’m building systems that quietly run in the background while real life happens
+          in the foreground.
+        </p>
+        <p class="text-white/78 text-[15px] leading-relaxed">
+          Now I’m trying to turn that into a career I actually want to keep, instead of just
+          another job I’m trying to escape from.
+        </p>
+      </div>
 
-      <!-- Closing -->
-      <section class="mt-4 border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
-          <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-2">
-            If you’re still reading
+      <div class="space-y-4 text-[14px]">
+        <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+          <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-1">
+            Currently
           </div>
-          <p class="text-white/70 text-[14px] max-w-[420px]">
-            You’re probably a builder, creator or systems person too. I’m always down to compare
-            notes or trade ideas.
+          <p class="text-white/80">
+            Building SaltySesh, hardening SeshBot™, and slowly replacing “corporate IT brain”
+            with “builder / owner brain.”
           </p>
         </div>
+        <div class="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
+          <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-1">
+            Anchors
+          </div>
+          <p class="text-white/80">
+            Family, faith, long-term thinking, and not selling out my future just to look busy right now.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <a
-          href="mailto:hello@ghinea.io?subject=Hey%20Lawrence"
-          class="px-4 py-2 rounded-full border border-white/15 bg-white/10 text-[12px] uppercase tracking-[0.16em] text-white/85 hover:bg-white/15"
-        >
-          Say hi
-        </a>
-      </section>
+    <!-- Timeline -->
+    <section class="mb-16">
+      <h2 class="text-sm uppercase tracking-[0.2em] text-white/45 mb-3">
+        A quick timeline
+      </h2>
+      <ul class="space-y-3 text-[14px] text-white/75">
+        <li>
+          <span class="text-white/40">Early 2020s ·</span> Corporate IT, tickets, systems, lots
+          of “have you tried turning it off and on again.”
+        </li>
+        <li>
+          <span class="text-white/40">2024 ·</span> SaltySesh™ becomes real instead of theoretical.
+          SeshBot™ starts as a side project and accidentally turns into a product.
+        </li>
+        <li>
+          <span class="text-white/40">Now ·</span> Building a small empire on purpose: photography,
+          tools, and a future where I answer to my own calendar.
+        </li>
+      </ul>
+    </section>
 
-      <footer class="pt-6 mt-8 text-xs text-white/40 flex justify-between">
-        <span>Ghinea.io · 2025</span>
-        <a href="/" class="hover:text-white">Back to main</a>
-      </footer>
-    </main>
-  </body>
-</html>
+    <!-- Closing -->
+    <section
+      class="mt-4 border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+    >
+      <div>
+        <div class="text-[11px] uppercase tracking-[0.2em] text-white/45 mb-2">
+          If you’re still reading
+        </div>
+        <p class="text-white/70 text-[14px] max-w-[420px]">
+          You’re probably a builder, creator or systems person too. I’m always down to compare
+          notes or trade ideas.
+        </p>
+      </div>
+
+      <a
+        href="mailto:hello@ghinea.io?subject=Hey%20Lawrence"
+        class="px-4 py-2 rounded-full border border-white/15 bg-white/10 text-[12px] uppercase tracking-[0.16em] text-white/85 hover:bg-white/15"
+      >
+        Say hi
+      </a>
+    </section>
+
+    <footer class="pt-6 mt-8 text-xs text-white/40 flex justify-between">
+      <span>Ghinea.io · 2025</span>
+      <a href="/" class="hover:text-white">Back to main</a>
+    </footer>
+  </main>
+</Layout>

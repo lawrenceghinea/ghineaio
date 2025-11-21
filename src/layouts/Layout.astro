@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+}
+
+const {
+  title = "Ghinea.io — Systems disguised as art.",
+  description = "Ghinea.io is the personal lab of Lawrence Ghinea — systems, automation, and digital tools disguised as art.",
+  bodyClass = "bg-[#090909] text-white font-sans antialiased",
+} = Astro.props;
+
+const url = Astro.url.href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- iOS / app name -->
+    <meta name="apple-mobile-web-app-title" content="Ghinea.io" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Ghinea.io" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/og-ghineaio.png" />
+    <meta property="og:url" content={url} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/og-ghineaio.png" />
+  </head>
+
+  <body class={bodyClass}>
+    <slot />
+  </body>
+</html>

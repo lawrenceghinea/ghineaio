@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Ghinea.io — Page not found.";
+const description =
+  "This page doesn’t exist yet. It might still be in the lab, or it never shipped.";
+const bodyClass =
+  "bg-[#090909] text-white font-sans antialiased overflow-x-hidden";
+---
+
+<Layout {title} {description} {bodyClass}>
+  <div class="min-h-screen flex flex-col bg-[var(--bg-main,#090909)] text-[var(--text-main,#ffffff)]">
+    <!-- ========================= STICKY NAV (SIMPLE) ========================= -->
+    <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
+      <div class="max-w-[1200px] mx-auto px-5 py-4 flex items-center justify-between gap-4">
+        <!-- left pill -->
+        <a
+          href="/"
+          class="nav-pill flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 uppercase tracking-[0.16em] text-xs"
+        >
+          <span class="w-1.5 h-1.5 bg-[#2de1a2] rounded-full shadow-[0_0_8px_#2de1a2]"></span>
+          Ghinea.io
+        </a>
+
+        <!-- right pill -->
+        <a
+          href="#connect"
+          class="nav-pill bg-white text-black px-4 py-1.5 rounded-full border border-white/10 uppercase tracking-[0.16em] text-[11px] hover:bg-[#e5e5e5] transition"
+        >
+          Contact ↗
+        </a>
+      </div>
+    </header>
+
+    <!-- ========================= 404 CONTENT ========================= -->
+    <main class="flex-1 relative">
+      <!-- subtle cursor glow background reused vibe -->
+      <div
+        class="pointer-events-none fixed inset-0 z-[-1]"
+        style="background:
+          radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 55%),
+          radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 55%);"
+      ></div>
+
+      <section class="max-w-[900px] mx-auto px-5 pt-24 pb-24 flex flex-col items-center text-center">
+        <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-3">
+          404 — Not Found
+        </div>
+
+        <h1 class="text-[clamp(40px,8vw,80px)] font-bold leading-[0.9] mb-6 tracking-tight">
+          This page hasn’t shipped yet.
+        </h1>
+
+        <p class="max-w-[520px] text-[15px] text-[#b0b0b0] leading-relaxed mb-10">
+          The route you tried to open doesn’t exist inside this version of Ghinea.io.
+          It might still be on paper, in a notebook, or buried in the lab.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+          <a
+            href="/"
+            class="px-5 py-2.5 rounded-full border border-white/15 bg-white/5 uppercase tracking-[0.16em] text-[11px] hover:bg-white hover:text-black transition"
+          >
+            Back to homepage
+          </a>
+
+          <a
+            href="#connect"
+            class="px-5 py-2.5 rounded-full border border-white/15 bg-transparent uppercase tracking-[0.16em] text-[11px] text-white/70 hover:bg-white/10 transition"
+          >
+            Scroll to contact
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================= CONNECT / FOOTER STRIP ========================= -->
+      <section
+        id="connect"
+        class="max-w-[1200px] mx-auto px-5 pb-16 border-t border-white/5 pt-10"
+      >
+        <h2 class="text-[26px] md:text-[32px] font-semibold mb-4">
+          Still want to talk?
+        </h2>
+        <p class="text-[15px] max-w-[520px] text-white/60 mb-8 leading-relaxed">
+          Reach out with ideas, projects, or questions—especially if this broken link
+          was supposed to be something interesting.
+        </p>
+
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a
+            href="https://calendly.com/lawrence-ghinea/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="connect-btn-left"
+          >
+            Book a Call
+          </a>
+
+          <a href="mailto:hello@ghinea.io" class="connect-btn-right">
+            Send an Email
+          </a>
+        </div>
+
+        <div class="mt-10 text-xs text-white/40">
+          Lawrence Ghinea {new Date().getFullYear()}
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <style>
+    /* Background grid / noise like home */
+    body {
+      position: relative;
+      --scrollParallax: 0px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px
+        );
+      background-size: 80px 80px;
+      opacity: 0.12;
+      transform: translate3d(0, var(--scrollParallax), 0);
+      pointer-events: none;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(
+        circle at 0 0,
+        rgba(255, 255, 255, 0.1),
+        transparent 55%
+      );
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .connect-btn-left,
+    .connect-btn-right {
+      padding: 14px 18px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 14px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .connect-btn-left:hover,
+    .connect-btn-right:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  </style>
+</Layout>

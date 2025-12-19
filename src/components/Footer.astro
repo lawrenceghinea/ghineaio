@@ -1,0 +1,130 @@
+---
+const year = new Date().getFullYear();
+
+// Update these URLs to your real domains/paths
+const ecosystem = [
+  { name: "SaltySesh™", desc: "Studio + tools tested in the wild.", url: "https://saltysesh.co" },
+  { name: "SaltyLogic™", desc: "Automation, infrastructure, product experiments.", url: "https://saltylogic.com" },
+  { name: "LawrenceGhinea.com", desc: "Writing, portfolio, long-form personal site.", url: "https://lawrenceghinea.com" },
+];
+---
+
+<footer
+  id="connect"
+  class="max-w-[1200px] mx-auto px-5 mt-28 mb-16 pb-20 border-t border-white/5 pt-16 relative"
+  data-observe
+>
+  <h2 class="text-[clamp(40px,9vw,80px)] font-bold mb-8">
+    <span class="text-white/60">Let’s</span> Connect
+  </h2>
+
+  <p class="text-[17px] max-w-[600px] text-white/60 mb-10 leading-relaxed">
+    Always open to new collaborations and ideas. Let’s build something worth showing off.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 max-w-[600px] gap-4">
+    <a
+      href="https://calendly.com/lawrence-ghinea/30min"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="connect-btn-left"
+    >
+      Book a Call
+    </a>
+
+    <a href="mailto:hello@ghinea.io" class="connect-btn-right">
+      Send an Email
+    </a>
+  </div>
+
+  <!-- Ecosystem (subtle) -->
+  <div class="mt-14 pt-10 border-t border-white/5">
+    <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-4">
+      Ecosystem
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {ecosystem.map((item) => (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-2xl border border-white/5 bg-white/0 hover:bg-white/5 transition p-5"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-[13px] tracking-tight text-white">{item.name}</div>
+            <div class="text-[11px] uppercase tracking-[0.18em] text-white/40 group-hover:text-white/70 transition">
+              ↗
+            </div>
+          </div>
+          <p class="mt-2 text-[12px] leading-relaxed text-white/55">
+            {item.desc}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="mt-12 text-xs text-white/40">
+    Lawrence Ghinea {year}
+  </div>
+
+  <!-- SOCIALS -->
+  <div class="absolute bottom-4 right-6 flex gap-3">
+    <a
+      href="https://www.tiktok.com/@lawrenceghinea"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social text-[11px] font-semibold tracking-[0.16em]"
+    >
+      TT
+    </a>
+
+    <a
+      href="https://www.instagram.com/lawrenceghinea"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social text-[11px] font-semibold tracking-[0.16em]"
+    >
+      IG
+    </a>
+  </div>
+</footer>
+<style>
+  /* ===== CONNECT BUTTONS (restore original) ===== */
+  .connect-btn-left,
+  .connect-btn-right {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 17px;
+    transition: background 0.25s ease, transform 0.2s ease;
+    display: block; /* ensures full button area */
+  }
+
+  .connect-btn-left:hover,
+  .connect-btn-right:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* ===== SOCIAL ICONS (restore original circles) ===== */
+  .social {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .social:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+  }
+</style>

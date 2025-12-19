@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Current Builds – Ghinea.io";
+const description =
+  "A living snapshot of what Lawrence is actively building across SaltySesh, SaltyLogic, SeshBot, and the wider Salty ecosystem.";
+const bodyClass =
+  "bg-[#090909] text-white font-sans antialiased overflow-x-hidden";
+
+const builds = [
+  {
+    date: "2025-12-05",
+    product: "SeshBot v3.1",
+    status: "Shipped",
+    focus:
+      "Safer logic, better admin commands, and brand-flexible config so other studios can run their own SeshBot instances.",
+    tags: ["SeshBot", "SaltySesh", "Backend"],
+  },
+  {
+    date: "2025-12-03",
+    product: "SaltySesh™ Astro + Studio Portfolio",
+    status: "Shipped",
+    focus:
+      "Unified header/footer, global Book a Sesh CTA, and a dedicated SaltySesh Studio portfolio experience that matches the main brand.",
+    tags: ["SaltySesh", "Front-end"],
+  },
+  {
+    date: "2025-12-01",
+    product: "SaltyLogic Astro v1 + ghinea.io favicon",
+    status: "Shipped",
+    focus:
+      "Static Astro shell for SaltyLogic plus a real favicon identity touch for ghinea.io so everything feels intentional.",
+    tags: ["SaltyLogic", "Infra"],
+  },
+  {
+    date: "2025-12-05",
+    product: "Mobile responsiveness pass",
+    status: "In Progress",
+    focus:
+      "Tightening layouts across SaltyLogic, SaltySesh, and labs so they behave on small screens instead of barely surviving.",
+    tags: ["Responsive", "UI"],
+  },
+];
+
+// Simple status styling helper
+const getStatusClass = (status: string) => {
+  const key = status.toLowerCase();
+  if (key.includes("shipped")) {
+    return "border-emerald-400/70 text-emerald-200 bg-emerald-400/10";
+  }
+  if (key.includes("progress")) {
+    return "border-amber-400/80 text-amber-100 bg-amber-400/10";
+  }
+  if (key.includes("exploring")) {
+    return "border-indigo-400/80 text-indigo-100 bg-indigo-400/10";
+  }
+  return "border-slate-400/60 text-slate-100 bg-slate-400/10";
+};
+---
+
+<Layout {title} {description} {bodyClass}>
+  <div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
+    <main class="flex-1">
+      <section class="max-w-[1200px] mx-auto px-5 pt-16 pb-20">
+        <!-- BACK / FORWARD ROW -->
+        <div class="flex items-center justify-between gap-3 mb-6">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-white/80 hover:bg-white hover:text-black transition"
+          >
+            <span>←</span>
+            <span>Back to overview</span>
+          </a>
+
+          <a
+            href="/#connect"
+            class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-white/80 hover:bg-white hover:text-black transition"
+          >
+            <span>Forward:</span>
+            <span>Connect</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Eyebrow / breadcrumb -->
+        <div class="flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-3">
+          <span>Ghinea.io</span>
+          <span class="w-5 h-px bg-white/15"></span>
+          <span>Current Builds</span>
+        </div>
+
+        <!-- Title + intro -->
+        <header class="mb-10">
+          <h1 class="text-[clamp(32px,6vw,44px)] font-semibold tracking-tight mb-3">
+            Current Builds
+          </h1>
+          <p class="text-[14px] md:text-[15px] text-[var(--text-muted)] max-w-[560px] leading-relaxed">
+            A running snapshot of what&apos;s actually in motion — shipped releases, in-progress upgrades, and quiet experiments across the Salty ecosystem.
+          </p>
+        </header>
+
+        <!-- Builds list -->
+        <div class="space-y-4">
+          {builds.map((entry) => (
+            <article
+              class="group rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-5 md:py-6 shadow-[0_24px_50px_rgba(0,0,0,0.65)] transition-transform duration-200 ease-out hover:-translate-y-[2px] hover:border-white/15"
+            >
+              <!-- Top row: date + status -->
+              <div class="flex flex-wrap items-center gap-3 text-[11px] text-[var(--text-muted)] mb-2">
+                <span class="font-medium tracking-[0.18em] uppercase">
+                  {entry.date}
+                </span>
+                <span
+                  class={`inline-flex items-center rounded-full border px-3 py-1 text-[10px] tracking-[0.16em] uppercase ${getStatusClass(
+                    entry.status
+                  )}`}
+                >
+                  {entry.status}
+                </span>
+              </div>
+
+              <!-- Product title -->
+              <h2 class="text-[18px] md:text-[19px] font-semibold tracking-tight mb-2">
+                {entry.product}
+              </h2>
+
+              <!-- Focus / description -->
+              <p class="text-[13px] md:text-[14px] text-[var(--text-muted)] leading-relaxed mb-3">
+                {entry.focus}
+              </p>
+
+              <!-- Tags -->
+              {entry.tags && entry.tags.length > 0 && (
+                <ul class="flex flex-wrap gap-2 text-[11px] text-[var(--text-muted)]">
+                  {entry.tags.map((tag) => (
+                    <li
+                      class="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-3 py-1 tracking-[0.16em] uppercase"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>

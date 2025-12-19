@@ -9,41 +9,7 @@ const bodyClass =
 ---
 
 <Layout {title} {description} {bodyClass}>
-  <div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
-    <!-- ========================= STICKY NAV ========================= -->
-    <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
-      <div class="max-w-[1200px] mx-auto px-5 py-4 flex flex-col">
-        <div class="flex items-center justify-between gap-4 mb-3">
-          <!-- left pill -->
-          <a
-            href="#top"
-            class="nav-pill flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 uppercase tracking-[0.16em] text-xs"
-          >
-            <span class="w-1.5 h-1.5 bg-[#2de1a2] rounded-full shadow-[0_0_8px_#2de1a2]"></span>
-            Ghinea.io
-          </a>
 
-          <!-- center clock (hidden on xs) -->
-          <div
-            id="clock"
-            class="hidden sm:flex flex-1 justify-center text-[11px] tracking-[0.18em] text-white/60 uppercase"
-          >
-            MST · --
-          </div>
-
-          <!-- right pill -->
-          <a
-            href="#connect"
-            class="nav-pill bg-white text-black px-4 py-1.5 rounded-full border border-white/10 uppercase tracking-[0.16em] text-[11px] hover:bg-[#e5e5e5] transition"
-          >
-            Contact ↗
-          </a>
-        </div>
-
-        <!-- progress line -->
-        <div id="nav-line" class="h-[1px] w-full bg-white/10"></div>
-      </div>
-    </header>
 
     <!-- ========================= HERO ========================= -->
     <main id="top" class="flex-1 relative">
@@ -324,64 +290,61 @@ const bodyClass =
           </a>
         </div>
       </section>
-
-      <!-- ========================= CONNECT ========================= -->
+      <!-- ========================= CURRENT BUILDS ========================= -->
       <section
-        id="connect"
-        class="max-w-[1200px] mx-auto px-5 mt-28 mb-16 pb-20 border-t border-white/5 pt-16 relative"
+        id="current-builds"
+        class="max-w-[1200px] mx-auto px-5 mt-20"
         data-observe
       >
-        <h2 class="text-[clamp(40px,9vw,80px)] font-bold mb-8">
-          <span class="text-white/60">Let’s</span> Connect
-        </h2>
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.3em] text-[#5a5a5a] mb-2">
+              Current Builds
+            </div>
+            <p class="text-[13px] md:text-[14px] text-[#c0c0c0] max-w-[420px] leading-relaxed">
+              A live snapshot of what&apos;s being built across SaltySesh™, SaltyLogic™, and SeshBot™ — shipped releases, in-progress upgrades, and quiet experiments.
+            </p>
+          </div>
 
-        <p class="text-[17px] max-w-[600px] text-white/60 mb-10 leading-relaxed">
-          Always open to new collaborations and ideas. Let’s build something worth showing off.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 max-w-[600px] gap-4">
           <a
-            href="https://calendly.com/lawrence-ghinea/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="connect-btn-left"
+            href="/current-builds"
+            class="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[12px] font-medium tracking-[0.16em] text-white uppercase hover:bg-white hover:text-black transition"
           >
-            Book a Call
-          </a>
-
-          <a href="mailto:hello@ghinea.io" class="connect-btn-right">
-            Send an Email
+            View Current Builds
+            <span>↗</span>
           </a>
         </div>
 
-        <!-- COPYRIGHT -->
-        <div class="mt-12 text-xs text-white/40">
-          Lawrence Ghinea 2025
-        </div>
-
-        <!-- SOCIALS -->
-        <div class="absolute bottom-4 right-6 flex gap-3">
-          <a
-            href="https://www.tiktok.com/@lawrenceghinea"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social text-[11px] font-semibold tracking-[0.16em]"
+        <!-- Compact preview card -->
+        <a href="/current-builds" class="group block">
+          <article
+            class="rounded-3xl border border-white/8 bg-[#151515] px-5 md:px-6 py-5 md:py-6 flex flex-col gap-3 cursor-pointer hover:border-white/18 hover:-translate-y-[2px] transition-transform duration-200 shadow-[0_18px_40px_rgba(0,0,0,0.6)]"
           >
-            TT
-          </a>
+            <div class="flex flex-wrap items-center gap-3 text-[11px] text-[#a3a3a3]">
+              <span class="tracking-[0.18em] uppercase">
+                Live across the Salty ecosystem
+              </span>
+              <span class="w-5 h-px bg-white/12"></span>
+              <span class="uppercase tracking-[0.18em] text-[#e5e5e5]">
+                Updated as things ship
+              </span>
+            </div>
 
-          <a
-            href="https://www.instagram.com/lawrenceghinea"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social text-[11px] font-semibold tracking-[0.16em]"
-          >
-            IG
-          </a>
-        </div>
+            <p class="text-[13px] md:text-[14px] text-[#d0d0d0] leading-relaxed">
+              SeshBot releases, Astro rebuilds, responsive passes, infra tweaks, and the small wins that don&apos;t always make it into a full case study — all in one place.
+            </p>
+
+            <span
+              class="mt-1 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-white/70 group-hover:text-white"
+            >
+              Open Current Builds
+              <span class="translate-y-[1px] group-hover:translate-x-[1px] transition-transform">
+                →
+              </span>
+            </span>
+          </article>
+        </a>
       </section>
-    </main>
-  </div>
 
   <!-- LOADING OVERLAY -->
   <div id="loading-screen" class="fixed inset-0 z-50 bg-black flex items-center justify-center">
@@ -610,13 +573,20 @@ const bodyClass =
 
     /* Live MST clock (uses local time but labeled MST) */
     function updateClock() {
-      const el = document.getElementById("clock");
-      if (!el) return;
-      const now = new Date();
-      const opts = { hour: "2-digit", minute: "2-digit" };
-      const timeStr = now.toLocaleTimeString([], opts);
-      el.textContent = `MST · ${timeStr}`;
-    }
+  const el = document.getElementById("clock");
+  if (!el) return;
+
+  const tz = el.getAttribute("data-tz") || "America/Phoenix";
+  const now = new Date();
+  const timeStr = new Intl.DateTimeFormat([], {
+    timeZone: tz,
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(now);
+
+  el.textContent = `MST · ${timeStr}`;
+}
+
 
     /* Loading overlay */
     function initLoader() {

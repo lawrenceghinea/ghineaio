@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -50,7 +52,14 @@ const url = Astro.url.href;
     <meta name="twitter:image" content="/images/og-ghineaio.png" />
   </head>
 
-  <body class={bodyClass}>
-    <slot />
+   <body class={bodyClass}>
+    <div class="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)]">
+      <Header />
+      <main id="top" class="flex-1 relative">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
+
 </html>

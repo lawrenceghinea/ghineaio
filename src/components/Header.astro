@@ -1,0 +1,45 @@
+---
+const brand = "Ghinea.io";
+const accent = "#2de1a2";
+
+// Use Phoenix time (MST year-round, no DST)
+const timeZone = "America/Phoenix";
+---
+
+<header class="sticky top-0 z-30 backdrop-blur-xl bg-black/40 border-b border-white/5">
+  <div class="max-w-[1200px] mx-auto px-5 py-4 flex flex-col">
+    <div class="flex items-center justify-between gap-4 mb-3">
+      <!-- left pill -->
+      <a
+        href="#top"
+        class="nav-pill flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 uppercase tracking-[0.16em] text-xs"
+      >
+        <span
+          class="w-1.5 h-1.5 rounded-full"
+          style={`background:${accent}; box-shadow: 0 0 8px ${accent};`}
+        ></span>
+        {brand}
+      </a>
+
+      <!-- center clock (hidden on xs) -->
+      <div
+        id="clock"
+        data-tz={timeZone}
+        class="hidden sm:flex flex-1 justify-center text-[11px] tracking-[0.18em] text-white/60 uppercase"
+      >
+        MST · --
+      </div>
+
+      <!-- right pill -->
+      <a
+        href="#connect"
+        class="nav-pill bg-white text-black px-4 py-1.5 rounded-full border border-white/10 uppercase tracking-[0.16em] text-[11px] hover:bg-[#e5e5e5] transition"
+      >
+        Contact ↗
+      </a>
+    </div>
+
+    <!-- progress line -->
+    <div id="nav-line" class="h-[1px] w-full bg-white/10"></div>
+  </div>
+</header>
